@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Points</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+        }
+
+        label {
+            padding-right: 0.5em;
+        }
+
+        canvas {
+            border: 1px solid black;
+            height: 100%;
+        }
+
+        #slider-label {
+            display: block;
+            width: 5em;
+        }
+
+        #histogram {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            min-height: 400px;
+        }
+
+        #controls {
+            padding: 10px;
+            width: 100%;
+        }
+
+        .histogram-bar {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: left;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+
+<div id="controls">
+    <label for="danger">Allow many points</label><input id="danger" type="checkbox" />
+    <label for="slider" id="slider-label"></label><input id="slider" type="range" min="1" max="100"/>
+
+    <div id="histogram">
+        <div id="histogram-bars"></div>
+    </div>
+
+    <p id="avg"></p>
+    <p>Note: In the console you can use <i>setCount</i> to use a specific value.</p>
+</div>
+</body>
+
+<script src="dist/bundle.js"></script>
+</html>
